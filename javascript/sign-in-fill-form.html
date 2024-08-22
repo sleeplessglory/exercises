@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Purchase the album by Florence + The Machine</title>
+        <link rel="icon" href="images/Favicon+How+Big,+How+Blue,+How+Beautiful.jpeg">
+    </head>
+    <body>
+        <form action="index.php" method="POST" enctype="miltipart/form-data"> <!--Form tag. "action" shows where to send the form for a back-end part. "POST" method is for sensitive data, otherwise "GET". This "enctype" means that while sending a large (e.g. images) amount of data we break it into multiple parts, and when received, those parts are reassembled-->
+            <label for="username">Username:</label> <!--"for" attribute lets to go ahead and type when the label's clicked-->
+            <input type="text" id="username" placeholder="myusername2015" minlength="6" maxlength="20" required> <!--"id" is the same as "for" to link them-->
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" minlength="6" maxlength="20" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="howblue@beautiful.com" required>
+            <br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> <!--Pattern allows to define the rules of the input data. [0-9] for allowed digits and {3} for their amount, also "-" to be used-->
+            <br><br>
+            <label for="birth-date">Birth Date:</label>
+            <input type="date" id="birth-date" required>
+            <br><br>
+            <label for="album-version">Album version:</label>
+            <select id="album-version">
+                <option value="standard-cd">Standard CD (11 tracks)</option>
+                <option value="standard-vinyl">Standard Vinyl (11 tracks)</option>
+                <option value="deluxe-cd">Deluxe CD (16 tracks)</option>
+                <option value="target-cd">Target Exclusive CD (18 tracks)</option>
+                <option value="rsd-vinyl">RSD Box Set Vinyl (12 tracks)</option>
+            </select>
+            <br><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="0" max="100" value="1">
+            <br><br>
+            <label for="title">Title:</label>
+            <label for="Mr.">Mr.</label>
+            <input type="radio" id="Mr." value="Mr." name="title"> <!--"name" means all radio buttons will share only one name, not all three-->
+            <label for="Ms.">Ms.</label>
+            <input type="radio" id="Ms." value="Ms." name="title">
+            <label for="PhD.">PhD.</label>
+            <input type="radio" id="PhD." value="PhD." name="title">
+            <br><br>
+            <label for="comment">Comment:</label>
+            <textarea id="comment" rows="4" cols="25"></textarea>
+            <br><br>
+            <label for="file">Profile photo:</label>
+            <input type="file" id="file" accept="image/png, image/jpeg">
+            <br><br>
+            <input type="checkbox" id="subscribe">
+            <label for="subscribe">Subscribe for the news</label>
+            <br><br>
+            <input type="submit">
+            <br><br>
+            <input type="reset">
+            <!--<input id="display" readonly> the readonly attribute won't let input anything-->
+        </form>
+    </body>
+</html>

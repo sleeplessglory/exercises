@@ -1,0 +1,24 @@
+Any time the server is off, cd to the project folder and run "npm run dev" in the terminal
+
+"node_modules" folder contains external libraries, packages that the project relies on, a few of
+which are built tools, utility libraries, etc.
+
+"public" folder contains any public assets (public fonts, images, videos, etc.) typically 
+available via URL. They are not bundled by the final output
+
+"src" folder contains "assets" folders (images, videos, etc.), which is similar to "public",
+but files're bundled during the final output. 
+.jsx is JS XML. In a way, main.jsx is a main JS file. React works with components. We add
+single components. The "<App />" component, which we import.
+The app component in "App.jsx" file is the root component.
+We've got 2 CSS files: "App.css" and "index.css" (the latter is the main for the application),
+which we import from "main.jsx". App components may have their CSS, but we'll delete "App.css"
+
+"index.html" (main entry point to the program). Within <body> we have "<div id="root"></div>"
+element as well as a script to the "main.jsx".
+
+"package.json" file contains metadata about the project. 
+
+Within "App.jsx" remove the code within "App()" and all the imports above to start the project.
+We'll add other components to the "App()" component. To create a new component create within
+"src" folder a new file (e.g. "Header.jsx"). Head to this file and "App.jsx" for further instructions

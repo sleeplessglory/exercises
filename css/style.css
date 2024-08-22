@@ -1,0 +1,1215 @@
+/*External CSS (within .css file)*/
+/*We can specify any amount of classes, IDs, elements within one line 
+simultaneously even with their pseudo-classes or pseudo-elements: 
+.lyrics, #phshoot div:hover, dl {...}
+You can also specify the reference as: button[type="submit"] {...}*/
+.lyrics {
+    text-align: center;
+    font-size: 20px;
+}
+
+.mv-button { /* "." used for classes */
+    cursor: pointer;
+    border-style: solid;
+    border-color:rgb(0, 119, 255);
+    background-color: rgb(13, 22, 192);
+    color:white;
+    border-radius: 20px;
+    height:40px;
+    width: 185px;
+    font-size:17px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#phshoot div:hover {
+    cursor: pointer;
+/*    height: 570px;
+    width: 420px; The whole polaroid should slowly enlarge a little bit*/
+}
+.polaroid1 {
+    background-color: rgba(176, 234, 254, 0.812);
+    width: 400px;
+    height: 550px;
+    margin-left: 64px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    position: relative;
+    box-shadow: 7px 6px 7px gray;
+    display: inline-block;
+}
+#ph1 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    /*opacity: 0.812; same as alpha channel in rgba for colours, but for images*/ 
+}
+.polaroid2 {
+    background-color: rgba(176, 234, 254, 0.812); /*alpha channel in rgba stands for the opacity of the colour*/
+    width: 400px;
+    height: 550px;
+    margin-left: 64px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    position: relative;
+    box-shadow: 7px 6px 7px gray;
+    display: inline-block;
+}
+#ph2 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    
+}
+.polaroid3 {
+    background-color: rgba(176, 235, 254, 0.812);
+    margin-left: 64px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    width: 400px;
+    height: 550px;
+    position: relative;
+    display: inline-block;
+    box-shadow: 7px 6px 7px gray;
+}
+#ph3 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+.polaroid4 {
+    display: inline-block;
+    position: relative;
+    background-color: rgba(176, 235, 254, 0.812);
+    margin-left: 64px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    width: 400px;
+    height: 550px;
+    box-shadow: 7px 6px 7px gray;
+}
+#ph4 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+.polaroid5 {
+    display: inline-block;
+    position: relative;
+    background-color: rgba(106, 213, 248, 0.812);
+    margin-left: 64px;
+    margin-bottom: 70px;
+    width: 400px;
+    height: 550px;
+    box-shadow: 7px 6px 7px gray;
+}
+#ph5 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+dl {
+    background-color: rgba(161, 168, 242, 0.64);
+}
+/*
+Fonts in CSS.
+https://fonts.google.com for choosing fonts to connect via API or dowload and use locally*/
+@font-face { /*In case we wanna use fonts locally without connecting to google's API*/
+    src: url(fonts/RobotoSlab-VariableFont_wght.ttf);
+    font-family: Roboto-Slab; /*Set your a.k.a. for this font to use later on*/
+}
+@font-face {
+    src: url(fonts/PlaywriteDKLoopet-VariableFont_wght.ttf);
+    font-family: Playwrite-DK-Loopet;
+}
+@font-face {
+    src: url(fonts/circular-std-2.ttf);
+    font-family: Circular Standard;
+}
+/*Fonts in CSS*/
+#title-header { /* "#" used for IDs */
+    font-family: Playwrite-DK-Loopet, Verdana, Arial; /*If the 1st font can't be displayed, the 2nd will be chosen instead*/
+    font-size: 2em; /*1em = 100% or use pixels. "em" is relative to the parent, "rem" is for the root*/
+}
+.author {
+    font-family: Roboto-Slab, "Times New Roman", Georgia;
+    font-weight: normal; /*or bold*/
+    font-style: italic;
+}
+body { /*Nothing used for tags*/
+    margin: 0px;
+}
+/*Borders in CSS*/
+ol {
+    border-style: groove; /*none, solid, dashed, dotted, double, ridge, inset, outset, etc.*/
+    border-width: 5px;
+    border-color: hsl(0, 87%, 44%);
+    /*border: groove 5px hsl(0, 87%, 44%); same as 3 lines above except for the radius below*/
+    border-radius: 7px;
+}
+dl {
+    border-bottom: 4px solid gray;
+    border-top: 4px dashed rgb(34, 34, 174);
+    border-left: 4px dotted rgb(10, 112, 26);
+    border-right: 4px ridge rgb(160, 19, 19);
+    border-radius: 10px;
+}
+/*Shadows in CSS*/
+#ship-to-wreck {
+     /*The first number's for horizontal offset, the second's for vertical offset and the third's for blur*/
+    text-shadow: 5px 4px 6px rgb(231, 21, 21), -5px -4px 6px rgb(32, 17, 251);
+    /*For the second shadow separate them with ",". Negative offset values change the directory*/
+}
+
+/*Margin in CSS*/
+#box1 {
+    height: 200px;
+    width: 300px;
+    box-shadow: 9px 7px 7px;
+    margin: auto; /*Keeps the element in the middle*/
+}
+/*Margin in CSS*/
+#box2 {
+    margin-left: 50px; /*Margin for each element is individual and ain't related to one another*/
+    margin: 20px; /*The overall margin is only being used despite other margin modifications*/
+}
+/*Margin in CSS*/
+#box3 {
+    margin-right: auto; /*Always attached to the left side*/
+    height: 360px;
+    width: 540px;
+    box-shadow: 4px 5px 4px gray;
+}
+
+.photo-description {
+    font-size: 32px;
+}
+/*Float property in CSS*/
+#img1 {
+    float: left; /*The image is on the left side. Everything below the image on the page will be flowing on the right side of the image*/
+    margin-right: 11px;
+}
+#img2 {
+    float: right; /*Check out draft.html file for display property with "flow-root" value*/
+    margin-left: 11px;
+}
+/*Overflow property*/
+.overflow {
+    border: 2px dotted;
+    height: 100px;
+    width: 120px;
+    display: inline-block;
+    margin-right: 35px;
+}
+#over1 {
+    overflow: visible; /*Nothing's changed*/
+}
+#over2 {
+    overflow: hidden;
+}
+#over3 {
+    overflow: clip; /*Used in pair with the 2nd property below*/
+    overflow-clip-margin: 40px; /*Shows the allowed amount of pixels to be displayed*/
+}
+#over4 {
+    overflow: scroll; /*Lets to scroll the rest of the content*/
+}
+#over5 {
+    overflow: auto; /*Shows the scroll bar if needed and doesn't show if no need*/
+}
+/*Display property in CSS*/
+/*Also check out "Calculator program" exercise in JS section below for "grid" value, etc.*/
+#div1 {
+    height: 100px;
+    width: 120px;
+    background-color: #ff1515;
+    /*check out "background" property with "linear-gradient()" value in the "Weather app" exercise of JS*/
+    display: inline-block; /*"block" value is the same as a default <div>, "inline" is the same as <span>, "none" removes*/
+}
+#span1 {
+    height: 100px;
+    width: 120px;
+    background-color: rgb(94, 118, 255);
+    display: inline-block;
+    visibility: hidden; /*block is hidden but still takes up its space on the page*/
+}
+#span2 {
+    height: 100px;
+    width: 120px;
+    background-color: rgb(94, 118, 255);
+    display: inline-block;
+}
+/*Height and width properties*/
+.h-w {
+    border: 2px solid;
+    height: auto;
+    width: 50%;
+    float: left; /*won't work if border width takes up the space (contradicts 50% of width above)*/
+    padding: 25px;
+    box-sizing: border-box; /*resolves the issue above*/
+    text-align: center;
+    
+    max-width: 25%; /*even though we stated above that it's 50%. Same with "min-width"*/
+    min-height: 50%;
+
+    background-color: white;
+}   
+* { /*all the elements*/
+    box-sizing: border-box; /*for all elements width/height will be as they were set (even if we correct border/padding, the 'box' size will remain the same. Usually when border/padding's added, height/width starts to enlarge. In other words, we have to change the overall width/height before increasing border/padding*/
+}
+.container4boxes {
+    background-color: gray; /*can't see due to boxes taking up the whole space*/
+    height: 100vh; /*viewport height*/
+}
+/*Position property*/
+#box4 {
+    position: relative;
+    top: 600px;
+    left: 400px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(109, 26, 187);
+}
+#box5 {
+    /*position: fixed; Let's turn it off now, kind of annoying later on*/
+    top: 0px;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    background-color: rgb(29, 26, 187);
+}
+#box6 {
+    position: relative; /*"sticky" value is similar to 'fixed': we have some space preserved. When we scroll through it, it gets stuck at the corner*/
+    bottom: 200px;
+    left: 150px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(187, 26, 26);
+}
+#box7 {
+    position: absolute; /*"static" will get it back to the default position*/
+    width: 100px;
+    height: 100px;
+    background-color: rgb(33, 135, 18);
+    top: 50px;
+    left: 50px;
+}
+/*Background images*/
+#index { /*<body> with "index" id*/
+    background-image: url(images/What+Kind+of+Man+_+St+Jude+15.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    /*Checkout "Digital clock program" below for "backdrop-filter" property*/
+}
+#phshoot {
+    background-image: url(images/What+Kind+of+Man+_+St+Jude+NN.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/*Combinators*/
+#container-combinators {
+    border: 2px solid; /*To distinguish*/
+}
+#container-combinators p { /*Descendant combinator: an empty space between one and other selectors. Applied to children and their children, etc.*/
+    background-color: yellow;
+}
+#container-combinators > p { /*Child combinator: ">" between one and other selectors. Applied to children only*/
+    background-color: purple;
+}
+#container-combinators ~ p { /*General sibling(s) combinator: "~" between the selectors is needed. Applied to sibling(s) only*/
+    background-color: rgb(255, 255, 255);
+}
+#container-combinators + p { /*Adjacent sibling combinator: "+" between the selectors is used. Applied to the nearest sibling only*/
+    background-color: green;
+}
+/*Pseudo-classes*/
+header a { /*Any "anchor" tags within the <header> tags ("descendant" combinator). "link" pseudo-class is NOT used this time*/
+    color: rgb(193, 44, 178);
+}
+/*a:link { With this example color change will be applied only to the links leading outside of the website. Local links for the website won't be changed!
+    color: rgb(185, 51, 172);
+}*/
+header a:hover { /*Any <a> tags within <header> tags will be changed when we "hover" (pseudo-class) over them*/
+    color: rgb(225, 62, 209);
+    font-size: 1.1em;
+}
+header a:active { /*"active" pseudo-class stands for the moment, when users click on the link and hold it*/
+    color: rgb(23, 40, 150); 
+    font-size: 1.1em;
+}
+header a:visited { /*"visited" pseudo-class stands for the state when the link is visited*/
+    color:rgb(108, 107, 107);
+}
+/*We can use pseudo-classes everywhere, even without combinators*/
+#pseudo li:hover {
+    background-color: yellow;
+}
+#pseudo li:not(:hover) { /*In this case we use "not" pseudo-class in order to specify the colours when we do NOT hover over the list items*/
+    background-color: rgb(23, 32, 122);
+}
+#pseudo li:nth-child(2n+1):hover{ /*"nth-child()" pseudo-class picks only specified elements. If the value is (odd), then all odd elements will be chosen, same with (even), (2), (5), (3n) meaning every 3rd element, (2n+1) meaning to start with the 1st and then every second, etc.*/
+    background-color: rgb(184, 58, 189);
+}
+#greeting-div p {
+    background-color: rgb(102, 172, 238);
+    padding: 10px;
+    display: none; /*We hide it in order to show with the pseudo-class example below*/
+}
+#greeting-div:hover p { /*This time we wrote "hover" pseudo-class after the <div> ID name, because we can't hover over the hidden <p>*/
+    display: block; /*Now it's visible*/
+}
+/*Pseudo-elements in CSS*/
+dd::first-line { /*In description definitions the first line will be modified*/
+    background-color: rgba(20, 151, 31, 0.537);
+    color: white;
+}
+dt::first-letter { /*First letter of every description term is coloured*/
+    font-size: 1.7em;
+    color: rgb(161, 19, 19);
+}
+dd::selection { /*If we select ("selection" pseudo-element) any text in description definition, it will be coloured as white with grey background colour*/
+    color: white;
+    background-color: rgb(103, 98, 98);
+}
+#ul-albvers > li::before { /*For any list element in unordered list set anything "before" (pseudo-element) or "after" the text. ">" (child combinator) is used, so, we don't modify another grandchildren list elements*/
+    content: "🎙"; /*Set "" and between them press "Win" + ":"*/
+    font-size: 1.25em; /*Size of the content*/
+}
+#ul-albvers > li::marker { /*"marker" (pseudo-element) modifies the black dot marker before (children) list items*/
+    content: ""; /*Any emoji can be pasted or leave it blank to remove those markers. Better way of removing marks is shown in the "Navigation bar" part below*/
+    color: rgb(187, 30, 30); /*Colour of some markers can be modified too*/
+}
+/*Pagination in CSS*/
+.pagination {
+    text-align: center;
+}
+.pagination a { /*Styling the links within the <div>*/
+    color: white;
+    text-decoration: none; /*Elimitaing underlining of the links*/
+    padding: 22px 30px; /*Values (if 3) apply to: top left&right bottom; If 2: top left&right. If 4: top right bottom left*/
+    display: inline-block; /*So, we can adjust width and height now*/
+    background-color: rgb(25, 25, 152);
+    margin-bottom: 20px;
+}
+.pagination a.active { /*Within the "pagination" class find any <a> with "active" class spesified. To specify the class of the tag use "." in between*/
+    background-color: rgb(10, 10, 78);
+    font-weight: bold;
+}
+.pagination a:hover:not(.active) { /*In "pagination" class find any <a> and modify them when we "hover" over them while they're NOT "active" (class!="active") atm*/
+    background-color: rgb(143, 31, 31);
+}
+/*Dropdown menu*/
+.dropdown {
+    display: inline-block;
+}
+.dropdown button {
+    background-color: hsl(0, 0%, 80%);
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.dropdown .content {
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 95%);
+    min-width: 100px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+}
+.dropdown:hover .content{
+    display: block;
+}
+.dropdown:hover button {
+    background-color: hsl(0, 0%, 70%);
+}
+.dropdown a:hover {
+    background-color: hsl(0, 0%, 90%);
+} /*No comment left on this part since it was all explained earlier*/
+/*Navigation bar in CSS*/
+/*The author offered his own way to create this navbar (for the bottom of the page). If we want it on the top and have the links right in the middle, we shouldn't use <ul> at all. Instead, add these <a> into a <div> within <nav>, make them inline-block and then text-align to the center*/
+#photoshoot-1-header {
+    text-align: center;
+}
+.navbar ul {
+    list-style-type: none; /*Another or even a proper way to remove the marks of the list items*/
+    background-color: hsl(240, 85%, 30%);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.navbar a:hover {
+    background-color: hsl(240, 86%, 20%);
+}
+.navbar li {
+    float: left;
+}
+/*Already written above
+body {
+    margin: 0px;
+}*/
+main {
+    margin: 0px; /*If we want margins around the main content, we can set it here. No need atm*/
+}
+/*Website layout in CSS*/
+/*Already written above
+* {
+    box-sizing: border-box;
+} So, for the case below we mentioned the width of the tags. Now padding will be included in those % specified*/
+#index-header {
+    text-align: center;
+    padding: 20px;
+}
+.index-navbar {
+    background-color: rgb(125, 204, 125);
+    height: 50px;
+}
+aside {
+    width: 20%; /*This tag will take up only 20% of the width available*/
+    float: left; /*Now the <section> and <article> elements flow*/
+    padding: 10px;
+}
+section {
+    width: 40%;
+    float: left; 
+    padding: 10px;
+}
+article {
+    width: 40%; 
+    float: left;
+    padding: 10px;
+}
+/*Also an inline CSS was used to stop flowing later on: 
+<h3 style="clear: both;">*/
+/*For mobile version we'd like those 3 tags above to be on top of each other. So, let's add the rule below*/
+@media screen and (max-width: 600px) { /*If the width of the window or phone display is 600px or below, then change CSS properties*/
+    aside, section, article {/*tags we'd like to modify*/
+        width: 100%; /*These elements will take up 100% of the width now*/
+    }
+}
+/*Image gallery with CSS*/
+.photo-gallery {
+    display: inline-block;
+    border: 1px solid hsl(240, 74%, 45%);
+    margin: 5px;
+    width: 200px;
+}
+.photo-gallery .description {
+    padding: 10px;
+    text-align: center;
+}
+.photo-gallery:hover {
+    border: 1px solid hsl(240, 74%, 30%);
+}
+.photo-gallery img {
+    width: 100%; /*We set the width of the images to be 100% of the width of the "photo-gallery" class (mentioned above)*/
+    height: auto;
+}
+/*Icons with CSS*/
+/*Consider using fontawesome.com (or google icons)*/
+.icons {
+    text-align: center;
+}
+.fa-solid.fa-house.fa-3x { /*Paste the class name of the icon and change " " with "."*/
+    color: rgb(41, 103, 38);
+}
+.fa-solid.fa-house.fa-3x:hover {
+    color: hsl(117, 46%, 38%);
+}
+.fa-brands.fa-twitter.fa-3x {
+    color: rgb(39, 157, 235);
+}
+.fa-brands.fa-twitter.fa-3x:hover {
+    color: hsl(204, 100%, 60%);
+}
+.fa-brands.fa-youtube.fa-3x {
+    color: rgb(213, 17, 17);
+}
+.fa-brands.fa-youtube.fa-3x:hover {
+    color: hsl(0, 85%, 55%);
+}
+.fa-brands.fa-instagram.fa-3x {
+    color: rgb(220, 109, 11);
+}
+.fa-brands.fa-instagram.fa-3x:hover {
+    color: hsl(28, 90%, 55%);
+}
+.icons a {
+    text-decoration: none; /*Remove underlines out of <a>*/
+    margin-right: 20px;
+}
+/*Flexbox in CSS*/
+.box {
+    width: 150px;
+    height: 150px;
+    font-size: 8em;
+    text-align: center;
+    border-radius: 15px;
+}
+#box_1 {
+    background-color: hsl(0, 87%, 44%);
+    /*align-self: start; When we apply to single boxes
+    align-self: center; Now only the 1st boxes's in the middle (on the Y-axis)
+    align-self: end; At the bottom*/
+}
+#box_2 {
+    background-color: hsl(61, 72%, 52%);
+}
+#box_3 {
+    background-color: hsl(118, 87%, 44%);
+    order: 1; /*Will remove the 3rd box to the end. "-1" will make it the 1st on the row. So, we reorder them*/
+}
+#box_4 {
+    background-color: hsl(239, 87%, 44%);
+}
+.flexbox {
+    border: 10px solid black;
+    height: 90vh; /*90% of viewport height/units*/
+    display: flex; /*By default it means that "flex-direction:" is "row"*/
+    flex-direction: row-reverse;
+    /*flex-direction: row-reverse; Now boxes're shown from 1 to 4 (towards left) and on the right corner (4321)
+    flex-direction: column; 
+    flex-direction: column-reverse*/
+    /*justify-content: flex-start; By default "flex-start" with no change. 
+    justify-content: flex-end; Imagine for the X-axis. Starts from the end with 4 to 1 (to the left) (1234)
+    justify-content: space-between; puts space evenly only between the boxes. So, we can adjust the window width
+    justify-content: space-around; same as above but also extra little spaces added to the left side of the 1st box and to the right side of the last
+    justify-content: space-evenly; space is added evenly everywhere: between the boxes and outside of them
+    justify-content: center; content is in the middle of the X-axis (used with flex-direction as a ROW)
+    align-items: flex-start; Imagine for the Y-axis (cross-axis) changes. A default value with no changes at all
+    align-items: flex-end; Moves the initial horizontal line to the bottom (still horizontal)
+    align-items: center; Moves to the center (still keeps it horizontal)
+    align-items: baseline; This time around the text will be aligned (if we make one of the fonts really small, they will be aligned with the rest on the Y-axis, and the small text's box will be moving accordingly)    
+    Here extra 4 boxes were added to show the examples below!
+    flex-wrap: nowrap; The default state with no change
+    flex-wrap: wrap; Boxes will get back their size and be wrapped (if enough space, otherwise on the new line)
+    flex-wrap: wrap-reverse; The reverse order from the left bottom angle
+    align-content: flex-start; Used in pair with "flex-wrap: wrap" for the Y-axis. With "flex-start" value all the empty spaces between boxes on the Y-axis are gone
+    align-content: flex-end; same as above but on the bottom of the page
+    align-content: center; Boxes're centered (still with no space between them on Y-axis) (used with flex-direction as a COLUMN)
+    align-content: space-evenly; Put spaces evenly between the top border, the boxes (if more than 1 line) and the bottom border by Y-axis
+    align-content: space-between; If more than 1 line of boxes, the 1st is on the top and the 2nd on the bottom
+    
+    flex-wrap: wrap;
+    align-content: flex-start;
+    column-gap: 1em; Adds a gap of 1em between the columns
+    row-gap: 1em; Adds a gap of 1em between the rows
+    Now we deleted previous 4 extra boxes.
+    */
+}
+/*Transformations in CSS. Can be applied to images too*/
+#boxt1 {    
+    background-color: hsl(117, 47%, 48%);
+    /*Multiple values can be applied by one "transform" line
+    transform: translateX(50%); Moves the box on the X-axis by 50px to the right. Negative - to the left. Percents (the width of the box, not the display) can be also used
+    transform: translateY(90px); same as "translateX" but for the Y-
+    transform: translate(40px, 140px); Moves by the X-axis and Y-axis (two values needed)
+    transform: rotateX(45deg); Rotated (flipping around the X-axis) by 45 degrees on the X-axis 
+    transform: rotateY(45deg); Rotated (flipping around the Y-axis) by 45 degrees on the X-axis 
+    transform: rotateZ(45deg); Rotated by 45 degrees (flipping around the Z-axis)
+    transform: scaleX(2); Enlarges the width on X-axis by 200%
+    transform: scaleY(0.5); Decreases the height on Y-axis by 50%
+    transform: scale(0.5, 1.5); For both axises
+    transform: skewX(45deg); Tilts the box to the 45 degrees by the X-axis;
+    transform: skewY(30deg); same as the X-axis but for the Y-axis
+    transform: skew(20deg, 35deg); for both
+    transform: translateX(100%) rotateZ(90deg) scale(0.5);
+    */
+}
+#boxt2 {    
+    background-color: hsl(0, 47%, 48%);
+}
+#boxt3 {    
+    background-color: hsl(234, 47%, 48%);
+}
+.transformations {
+    width: 250px;
+    height: 250px;
+    border: 5px solid;
+    font-size: 13em;
+    text-align: center;
+    transform: translateX(100px) rotateZ(45deg) scale(0.5);
+}
+/*Animations in CSS (can be applied to images too)*/
+#anbox {
+    width: 250px;
+    height: 250px;
+    background-color: hsl(0, 87%, 44%);
+    font-size: 13em;
+    text-align: center;
+    /*Set the name of animation we specified later on
+    animation-name: slideLeft;
+    animation-name: slideRight;
+    animation-name: slideUp;
+    animation-name: slideDown;
+    animation-name: rotate;
+    animation-name: grow;
+    animation-name: shrink;
+    animation-name: fade;
+    opacity: 0; If we want to fade in, set it initially as 0
+    animation-name: fade-in;
+    animation-name: colourChange;
+    animation-iteration-count: 2; How many times the animation's performed. For constant animation the value is "infinite"
+    animation-direction: normal; Default value
+    animation-direction: reverse;
+    animation-direction: alternate; First perfoms as "normal", then as "reverse"
+    animation-direction: alternate-reverse; Reverse of "alternate"
+    animation-play-state: paused; Pause it
+    animation-play-state: running; Active state
+    animation-timing-function: ease-in-out; Speed default value. By opening the inspector tab in browser you can click on the icon for this line and change the timing function. The new value can be copied and pasted instead of the current one
+    animation-timing-function: linear; Constant speed (no acceleration throughout the whole duration)
+    animation-timing-function: steps(5); For slow motion effects. The animation will be performed in 5 stopped states
+    transition: watch for this animation property in the next exercise (first JS) below*/
+    animation-name: glow;
+    animation-duration: 10s;
+}
+/*Animations can be applied while the box is being hovered over ("hover" pseudo-class), clicked on ("active" pseudo-class), etc.
+#anbox:hover {
+    animation-name: glow;
+    animation-duration: 10s;
+}*/
+@keyframes slideLeft { /*Keyframe rule to create an animation with the rule name of ours*/
+    from{transform: translateX(90%)} /*"from" means from the right to the current left position*/
+}
+@keyframes slideRight {
+    to{transform: translateX(240px)} /*"to" means to the right from the current left position*/
+}
+@keyframes slideUp {
+    from{transform: translateY(200px)} /*"from" means from the bottom to the current top position*/
+}
+@keyframes slideDown {
+    to{transform: translateY(110%)} /*"to" means to the bottom from the current top position*/
+}
+@keyframes rotate {
+    40%{transform: rotateX(90deg)} /*40% means that the animation will be fully performed by 40% of its duration and for the rest 60% of the remaning time it will get back to the initial position*/
+}
+@keyframes grow {
+    50%{transform: scale(2, 2)}
+}
+@keyframes shrink {
+    50%{transform: scale(50%, 50%)}
+}
+@keyframes fade {
+    70%{opacity: 0}
+}
+@keyframes fade-in {
+    60%{opacity: 1}
+}
+@keyframes colourChange { /*In this example we change the colour every 20% of the animation duration*/
+    0%{background-color: hsl(0, 87%, 44%)}
+    20%{background-color: hsl(60, 87%, 55%)}
+    40%{background-color: hsl(126, 87%, 44%)}
+    60%{background-color: hsl(199, 87%, 44%)}
+    80%{background-color: hsl(238, 87%, 44%)}
+    100%{background-color: hsl(306, 87%, 44%)}
+}
+@keyframes glow {
+    65%{box-shadow: 0px 0px 50px yellow}
+}
+
+
+
+/*JavaScript exercises start here
+Counter program*/
+#countLabel {
+    display: block;
+    text-align: center;
+    font-size: 10em;
+    font-family: Helvetica;
+}
+#counterContainer {
+    text-align: center;
+}
+.bttns {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color: hsl(204, 100%, 60%);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25; /*transition: 'property' 'time' (in seconds) to be executed, checkout "Stopwatch program" exercise below*/
+}
+.bttns:hover {
+    background-color: hsl(204, 66%, 45%); /*"transition" property is specified above*/
+}
+/*Random number generator*/
+#myButton {
+    text-align: center;
+    font-size: 3em;
+    padding: 5px 25px;
+    border-radius: 5px;
+}
+#myLabel {
+    font-size: 3em;
+}
+/*Checked property*/
+#submit2 {
+    font-size: 1em;
+}
+/*Temperature conversion program*/
+#tempconvdiv {
+    background-color: hsl(0, 0%, 94%);
+    font-family: Arial, sans-serif;
+}
+#temph1 {
+    color: hsl(238, 88%, 33%);
+}
+#tempform {
+    background-color: white;
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px hsla(240, 86%, 20%, 0.3);
+}
+#textBox {
+    width: 50%;
+    text-align: center;
+    font-size: 2em;
+    border: 2px solid hsla(0, 0%, 0%, 0.8);
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+.temp {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+/*Dice roller program*/
+#dice-container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+#rollButton {
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: hsl(240, 74%, 30%);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+#rollButton:hover {
+    background-color: hsl(240, 74%, 40%);
+}
+#rollButton:active {
+    background-color: hsl(240, 74%, 50%);
+}
+#amountOfDice {
+    font-size: 2rem;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+}
+#diceResult {
+    margin: 25px;
+}
+#diceImages img {
+    width: 150px;
+}
+/*Digital clock program*/
+#sale-body {
+    margin: 0;
+    background-image: url(images/Delilah+Vincent+Haycock+stills+24.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#clock {
+    font-family: monospace;
+    font-size: 6.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: hsla(0, 0%, 100%, 0.01);
+    backdrop-filter: blur(3px); /*The more pixels specified, the more blur effect*/
+    width: 100%; /*div element takes up the whole width*/
+}
+/*Stopwatch program*/
+#stopwatch-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(0, 0%, 90%);
+}
+#myStopwatch {
+    font-size: 4rem;
+    font-family: Circular Standard, Arial, sans-serif;
+    color: hsl(0, 0%, 25%);
+}
+#stopwatchContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid;
+    border-radius: 50px;
+    padding: 30px;
+    background-color: white;
+}
+#display {
+    font-size: 5rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: hsl(246, 62%, 25%);
+    text-shadow: 2px 2px 2px hsla(0, 0%, 25%, 0.75);
+    margin-bottom: 25px;
+}
+#controls button { /*will affect every <button> element (descendant combinator)*/
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 125px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.5s ease; /*slow transition after 0.5s we hover over it*/
+}
+#startBtn {
+    background-color: hsl(117, 46%, 30%);
+}
+#startBtn:hover {
+    background-color: hsl(117, 46%, 40%);
+}
+#stopBtn {
+    background-color: hsl(0, 70%, 30%);
+}
+#stopBtn:hover {
+    background-color: hsl(0, 70%, 40%);
+}
+#resetBtn {
+    background-color: hsl(243, 67%, 30%);
+}
+#resetBtn:hover {
+    background-color: hsl(243, 67%, 40%);
+}
+/*Calculator program*/
+#keys button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+#keys {
+    display: grid; /**/
+    grid-template-columns: repeat(4, 1fr); /*repeats for every line: 4 buttons, 1fr means 1 fractional unit (each column takes up even amount of space)*/
+    gap: 15px; /*gap between each of the rows*/
+    padding: 25px;
+}
+#calculator {
+    font-family: Circular Standard, Arial, sans-serif;
+    background-color: hsl(241, 88%, 16%);
+    border-radius: 15px;
+    max-width: 600px;
+    overflow: hidden; /*for the display long equations won't overflow*/
+}
+#display {
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    text-align: left;
+    border: bone;
+    color: white;
+    background-color: hsl(241, 88%, 26%);
+}
+#calculator-body {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+}
+#keys button:hover {
+    background-color: hsl(0, 0%, 30%);
+}
+#keys button:active {
+    background-color: hsl(0, 0%, 40%);
+}
+.operator-btn {
+    background-color: hsl(0, 70%, 30%); /*can't be applied since already defined the color above*/
+}
+/*Add and change HTML*/
+.box-class {
+    border: 3px solid;
+    width: 100%;
+    height: 125px;
+}
+#lunch {
+    border: 3px solid;
+    font-size: 2rem;
+}
+/*Mouse events*/
+#myBox {
+    background-color: lightblue;
+    width: 300px;
+    height: 300px;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#click-button {
+    font-size: 3rem;
+}
+/*Key events*/
+#keyBox {
+    background-color: lightblue;
+    width: 200px;
+    height: 200px;
+    font-size: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+/*Hide or show HTML*/
+#hs {
+    font-size: 2rem;
+}
+/*NodeLists*/
+.four-buttons {
+    font-size: 4rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: hsl(213, 66%, 41%);
+    color: white;
+}
+/*ClassLists*/
+#my-button {
+    font-size: 4rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+.enabled { /*this class ain't created yet, will be applied within JS*/
+    background-color: hsl(210, 100%, 50%);
+    color: white;
+}
+.btn-hov{
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+    font-weight: bold;
+}
+.disabled {
+    background-color: hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 80%);
+}
+#newH1 {
+    font-size: 5rem;
+}
+.another4 {
+    font-size: 4rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+/*Rock Paper Scissors game*/
+#game-body {
+    font-family: Circular Standard, Arial, sans-seif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#game-name{
+    font-size: 3.5rem;
+    color: hsl(240, 86%, 20%);
+}
+.choices{
+    margin-bottom: 30px;
+}
+.choices button {
+    font-size: 7.5rem;
+    min-width: 160px;
+    margin: 0px 10px; /*0px on the top and bottom, 10px on the sides*/
+    border-radius: 90px;
+    border: 7px solid hsl(306, 86%, 39%);
+    background-color: hsl(213, 66%, 41%);
+    width: 180px;
+    height: 180px; 
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+.choices button:hover {
+    background-color: hsl(213, 66%, 51%);
+    border: 7px solid hsl(306, 86%, 49%);
+    cursor: pointer;
+}
+#playerDisplay, #computerDisplay {
+    font-size: 2.5rem;
+    color: hsl(240, 86%, 30%);
+}
+#resultDisplay {
+    font-size: 5rem;
+    margin: 30px 0;
+}
+.greenText, #playerScoreDisplay {
+    color: hsl(126, 87%, 24%);
+}
+.redText, #computerScoreDisplay {
+    color: hsl(0, 87%, 34%);
+}
+.pinkText {
+    color: hsl(306, 86%, 29%);
+}
+.scoreDisplay {
+    font-size: 2rem;
+}
+/*Image slider (index.html reference)*/
+.slider {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider img {
+    width: 100%;
+    display: none;
+}
+img.displaySlide { /*applies if the <img> elements have this class*/
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.slider button {
+    position: absolute; /*towards the ".slider"*/
+    top: 50%; /*raises up the buttons for the 50% of the slider height*/
+    transform: translateY(-50%); /*moves it up for 50% of the button height (now all right in the middle)*/
+    font-size: 2rem;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+.prev {
+    left: 0;
+}
+.next {
+    right: 0;
+}
+@keyframes fade {
+    from {opacity: 0.3}
+    to {opacity: 1}
+}
+/*Weather app*/
+#forecast-body {
+    font-family: Circular Standard, Arial, Segoe UI Emoji; /*"Segoe UI Emoji" allows to properly show emojis*/
+    background-color: hsl(0, 0%, 95%);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.weatherForm {
+    margin: 20px;
+}
+.cityInput {
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid hsla(0, 0%, 20%, 0.3);
+    border-radius: 10px;
+    margin: 10px;
+    width: 350px;
+}
+button[type="submit"] {
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: hsl(126, 87%, 29%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+button[type="submit"]:hover {
+    cursor: pointer;
+    background-color: hsl(126, 87%, 34%);
+}
+#weather-cap {
+    font-size: 3.5rem;
+    margin: 0 0 20px 0;
+    color: hsl(238, 87%, 33%);
+}
+.card {
+    background: linear-gradient(180deg, hsl(210, 80%, 49%), hsl(299, 80%, 76%));
+    margin-bottom: 40px;
+    padding: 50px;
+    border-radius: 7px;
+    box-shadow: 4px 4px 5px hsla(0, 0%, 0%, 0.5);
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cityDisplay {
+    margin-top: 0;
+}
+.card p { /*descendant combinator*/
+    margin: 5px 0;
+}
+.cityDisplay, .tempDisplay {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: hsla(0, 0%, 0%, 0.75);
+    margin-bottom: 25px;
+}
+.humidityDisplay {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+.descDisplay {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.weatherEmoji {
+    margin: 0;
+    font-size: 7.5rem;
+}
+.errorDisplay {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: hsla(0, 0%, 0%, 0.75);
+}
+@media screen and (max-width: 600px) {
+    #weather-cap{
+        font-size: 2rem;
+    }
+}
