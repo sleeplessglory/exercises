@@ -1,0 +1,11 @@
+/*Module CSS (for specific components). Pay attention to the file name!
+Avoids naming conflicts (when many classes, etc.) because a unique class
+is gonna be generated via a hashing algorithm (shown in browser inspect)*/
+.button {
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
