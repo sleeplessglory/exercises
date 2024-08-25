@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 function List2(props) {
-    /*
+    /*Moved the array to the App.jsx and made it reusable
     const fruits=[{id: 1, name: "apple", calories: 95}, 
                   {id: 2, name: "orange", calories: 45}, 
                   {id: 3, name: "banana", calories: 105}, 
@@ -26,12 +27,22 @@ function List2(props) {
     listItems = lowCalFruits.map(lowCalFruit => <li key={lowCalFruit.id}>
         {lowCalFruit.name}: &nbsp;
      <b>{lowCalFruit.calories}</b></li>);
-    */
+    */ 
     return(
     <>
-        <h3>{category}</h3>
-        <ol>{listItems}</ol>
+        <h3 className="list-category">{category}</h3>
+        <ol className="list-items">{listItems}</ol>
     </>
     );
 }
-export default List2
+List2.propTypes = {
+    category: PropTypes.string,
+    items: PropTypes.arrayOf(PropTypes.shape({id: PropTypes.number, //we have an array of objects
+                                              name: PropTypes.string, //each property type is specified
+                                              calories: PropTypes.number}))
+}
+List2.defaultProps = { //remember to use defaultProps and propTypes as a back-up for bugs
+    category: "category",
+    items: [] //at least the category will be displayed, if array's absent
+}
+export default List2;
