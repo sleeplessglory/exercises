@@ -19,7 +19,7 @@ function List2(props) {
                                                          <b>{fruit.calories}</b></li>);
     */
     //Let's add an "id" too, since the names can be the same in the database
-    //Warning in the console demanding for each list child to have their own key prop. (key={fruit.id})
+    //Warning in the console demanding for each list child to have their own key prop. (key={fruit.id} or key={index} (if an array))
     /* example with filtering by calories
     const lowCalFruits = fruits.filter(fruit => fruit.calories < 100);
     listItems = lowCalFruits.map(lowCalFruit => <li key={lowCalFruit.id}>

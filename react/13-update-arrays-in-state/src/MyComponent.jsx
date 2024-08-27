@@ -6,14 +6,15 @@ function MyComponent(){
         const newFood = document.getElementById("foodInput").value;
         document.getElementById("foodInput").value = ""; //resets on the page after adding
 
-        setFoods(prevFoods => [...prevFoods, newFood]); //same reason as for the previous exercise
+        setFoods(prevFoods => [...prevFoods, newFood]); //same pattern as for the previous exercise
     }
 
     function handleRemoveFood(index){
-        setFoods(foods.filter((_, i) => i !== index));
-        //.filter(element, index) is provided by the element and its index
-        //using "_" passed as a parameter means that it's ignored (we don't use during iterations)
-        //the parameter is already called "index", so within "filter()" use "i" instead
+        //the function parameter is already called "index", so within "filter()" use "i" instead
+        setFoods(foods.filter((_, i) => i !== index)); //returns elements, which i's !== index
+        //a better way is: setFoods(prevFoods => prevFoods.filter((_, i) => i !== index));
+        //.filter(element, index) is provided by the current element and its index
+        //using "_" passed as a parameter means that it's ignored (if we don't use during iterations)
     }
 
     return(
