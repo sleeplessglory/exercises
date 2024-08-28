@@ -1,3 +1,6 @@
+//onChange is an event handler used primarily with form elements (e.g. <input>,
+//<textarea>, <select>, <radio>, etc.)
+//Triggers a function every time the value of the input changes
 import React, {useState} from 'react';
 function MyComponent(){
     const [name, setName] = useState("Guest");

@@ -1,3 +1,11 @@
+//React hook is a special function that allows functional components to use React features
+//without writing class components (React v16.8) (useState, useEffect, useContext,
+//useReducer, useCallback, etc.)
+
+//useSate() is a React hook that allows the creation of a stateful variable AND a setter
+//function to update its value in the Virtual DOM
+//[name, setName]
+//Do not use it with class-based components!
 import React, {useState} from 'react'; //We only need useState function out of the whole "React" library (object destructuring {})
 function MyComponent(){
     const [name, setName] = useState("Guest"); //We can set an initial state with useState("Guest")

@@ -1,4 +1,14 @@
+//props are read-only properties that're shared between components
+//A parent component can send data to a child component
+//<Component key=value />
 
+//propTypes are mechanisms that ensure that the passed value is of
+//the correct datatype
+//age: PropTypes.number (we want to ensure the "age"'s type is number)
+
+//defaultProps are default values for props in case they aren't passed
+//from the parent component
+//name: "Guest"
 function Student(props){ //"props" is an object storing all key=value pairs from the parent component
     return(
         <div className="student">
