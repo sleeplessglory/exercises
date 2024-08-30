@@ -1,0 +1,57 @@
+1. Open the project folder
+2. Make sure, that "npm install" is done
+3. "npm run dev"
+4. "npm install cypress --save-dev" to install Cypress locally for the project
+5. "npx cypress open", which opens the whole Cypress window
+6. Choose either "E2E" or "Component" testing. Choose "E2E" for now and agree with new files
+7. When the browser is chosen and Cypress is opened, click on "Create new spec"
+8. Specify the "name.cy.js" file name within "e2e" folder, create spec and run it
+Now within the project folder there're new files/folders. Within "cypress/e2e" folder we've got
+"fundamentals.cy.js" file which we created (now we can write tests within it)
+".then()" in Cypress isn't the same as in JS with Promises!
+Cypress is asynchronous
+
+No need within E2E tests to use the whole URL to visit it. You can head to "cypress.config.js" file 
+and within "e2e" set " baseUrl: 'http://localhost:3000' ". Next time use "cy.visit('/continuePathName')
+
+In "commands.js" file you can set the custom commands (as shortcuts within the tests):
+Cypress.Commands.add('newCommandName', (dataTestSelector) => {
+    return cy.get(`data-test="${dataTestSelector}"`)
+})
+So, the next time you can use: cy.newCommandName('ArrtibuteValue')
+
+"component" and "e2e" have their own folders created by Cypress itself when we set them up
+"E2E" test files have ".cy.js" extension (if you use JS)
+"Component" test files have ".cy.jsx" extension (if you use React)
+
+The difference is that "Component" testing builds your components using a development server
+instead of rendering witin a complete website, which results in faster tests and fewer
+dependencies on infrastructre than E2E tests covering the same code paths
+
+Don't use just the "happy" path of the user. Make sure to test users that might be 
+maliciously using your app or actions that might not be common
+
+Use test attributes to reference specific elements. Don't target them based on CSS 
+attributes (id, class, tag, etc.). Don't target elements that may change their 
+textContent. Don't use too generic selector (e.g. cy.get(button)) (better with ".within()")
+
+Cypress does NOT run synchonously. Don't assign return values
+
+Only test websites that you control. Try to avoid visiting or requiring a 3rd party server. 
+If you choose, you may use cy.request() to talk to 3rd party servers via their APIs. 
+If possible, cache results via cy.session() to avoid repeat visits
+
+Don't make one test dependent on another. This becomes extremely difficult to manage
+
+Writing tiny tests, like unit tests, is non-performant and excessive. Cypress resets
+various state and tests between tests that takes a long time. So small tests hurt performance. 
+Plus, you'll still know exactly what assertion fails in a longer e2e test
+
+Don't clean up state with "after" or "afterEach". One benefit of Cypress is incrementally writing 
+tests and application code. And if the state isn't maintained after a test, it can make it more 
+difficult to know what you should test next. If something fails in the middle of your test, the 
+"after" cleanup functions won't get a chance to run. Cypress already cleans up state between tests, 
+so this might not be something you need to worry about at all
+
+Use route aliases or assertions to guard Cypress from proceeding until an explicit condition is met. 
+Aliases will wait for it. Avoid using arbitrary cy.wait()

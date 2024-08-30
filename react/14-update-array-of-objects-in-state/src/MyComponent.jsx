@@ -14,7 +14,7 @@ function MyComponent(){
         
         setCarYear(new Date().getFullYear());
         setCarMake(""); //in the previous exercise we couldn't do it, since it was an array
-        setCarModel("");
+        setCarModel(""); //resets the specific property, not the whole array
     }
     function handleRemoveCar(index){ //car object is being removed when we click on it
         setCars(prevCars => prevCars.filter((_, i) => i!==index));

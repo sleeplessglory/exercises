@@ -14,6 +14,6 @@ const person2 = {
     name: "Martin",
     favFood: "pizza",
     sayHello: function(){console.log(`I'm ${this.name}`)}, //we use "this.name" (or can use "person.name"), otherwise it won't show it
-    eat: () => {console.log(`${person2.name} is eating ${person.favFood}`)}, //"this." doesn't work with arrow functions. Use the function() itself or specify properties as "objectName." ("person." this time)
+    eat: () => {console.log(`${person2.name} is eating ${person2.favFood}`)}, //"this." doesn't work with arrow functions. Use the function() itself or specify properties as "objectName." ("person." this time)
 };
 person2.eat();
