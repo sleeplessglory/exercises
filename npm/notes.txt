@@ -1,0 +1,56 @@
+npm init - creates the "package.json" file and sets the basic info for the project
+npm init -y - creates the "package.json" file with default values
+npm login - redirects you to the browser to sign in
+npm whoami - shows the current user
+npm install - installs all the required packages from "package.json" file
+npm install packageName - installs the specified package to the project folder
+npm install -g packageName - installs the specified package globally
+npm list - shows all the packages of the file alongside with their versions
+npm view packageName versions - shows all the versions of the package. To check the specific
+            version, head to the release page of the package's github repository 
+npm update - checks for any updates for your packages
+npm install packageName@latest - installs the latest version of the package even if prevented with "^"
+npm install packageName@7 - installs the latest major "7" version of the package (can specify any version)
+npm install packageName@~7.1 - installs the latest minor "7.1" version
+npm install npm@latest -g - installs the latest npm CLI version
+npm install nodemon -g - monitors files and restarts the server
+npm rm/npm uninstall (-D) (-g) - removes/uninstalls the package. (-D/-g) is needed if it was a dev dependency/global
+nodemon - monitors for changes in files and runs the server again ("Ctrl + C" to exit)
+
+
+npm create vite@latest - creates a vite web server to start the project
+npm install cypress --save-dev - installs Cypress to the project locally
+npx cypress open - opens Cypress to start testing (npx = node package execute)
+
+
+Keep in mind to visit npmjs.com and look for specific packages: the way to import, use, etc.
+
+"package.json" file shows the info about the project. If you run "npm install"
+in the folder with "package.json", npm will install all the packages in the file
+
+"package-lock.json" file lets alongside with "npm install" to install the exact major.minor.patch
+versions from "package.json" file (resolves the compatibility issues). E.g., we clone the github project
+and run "npm install". After the author uploaded his versions to github, the dependent packages may be 
+updated by the time you clone the repository. Running "npm install" will install the newer versions.
+If we have "package-lock.json" file alongside with "package.json", then it'll install the exact major,
+minor and patch versions of the original author
+
+node_modules folder stores all the packages for the project. Dependencies show that
+one package may depend on others. And those other packages may depend on others.
+Therefore, if you install one specific package, you may get other packages installed too
+
+MAJOR.MINOR.PATCH (12.9.3) 12 is a major version, 9 is minor, 3 is patch
+Major version updates used for big changes and aren't backwards-compatible (will probably break the code)
+Minor version updates are backwards-compatible and usually won't break older builds
+Patch updates are for small bug fixes and won't break older builds
+
+"packageName": "^4.1.1" with "^" means that npm won't upgrade it to the major "5.0.0" release (will only
+update minor and patch versions). In case "~4.1.1" it won't upgrade to the minor "4.2.0" verson (only 
+patch updates allowed). Leaving "4.1.1" in "package.json" file means that only this version will be used 
+for the project. And leaving "packageName": "*" means to always upgrade the package to the newest version
+
+Dev packages are source files such as headers that may be required for other programs to develop 
+and build applications related to that package (like "npm install cypress --save-dev [or -D]").
+Dev dependencies can be used for specifying the versions of: JavaScript, TypeScript, React, Cypress, etc.
+
+Uninstalling packages won't remove it from "scripts" in "package.json" (keep in mind to erase, if set anything)
