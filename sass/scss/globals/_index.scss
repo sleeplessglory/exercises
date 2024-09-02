@@ -1,0 +1,7 @@
+/*SASS PARTIALS*/
+/*This file contains all the partials for this folder that will be exported to "style.scss"*/
+@forward 'boilerplate'; /*Forwarding these files to the overall "style.scss"*/
+@forward 'typography'; /*You can specify the name this way, if you called it with "_"*/
+/*Specify @forward in the file where we import these files above. Check out "style.scss"*/
+/*VARIABLES*/
+@forward 'colours';

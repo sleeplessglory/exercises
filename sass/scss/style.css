@@ -1,0 +1,47 @@
+/*SASS PARTIALS*/
+/*SASS PARTIALS*/
+/*This file contains all the partials for this folder that will be exported to "style.scss"*/
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: var(--background-color);
+  color: var(--color);
+  margin: 0;
+  padding: 0;
+}
+
+/*SASS PARTIALS*/
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit; /*Inherits the same value for this property from the <html>*/
+}
+
+/*Forwarding these files to the overall "style.scss"*/
+/*SASS PARTIALS*/
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/*You can specify the name this way, if you called it with "_"*/
+/*Specify @forward in the file where we import these files above. Check out "style.scss"*/
+/*VARIABLES*/
+/*VARIABLES*/
+:root { /*overwrites the values of the same variable names*/
+  --background-color: hsl(222, 96%, 80%); /*Names of CSS custom properties start with "--"*/
+  --color: hsl(0, 0%, 100%);
+}
+
+/*Specify the folder name with those partials to import them here*//*# sourceMappingURL=style.css.map */

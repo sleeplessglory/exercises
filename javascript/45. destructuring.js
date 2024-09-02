@@ -55,4 +55,4 @@ function displayPerson({firstName, lastName, age, job="unemployed"}){ //when the
     console.log(`age: ${age}`);
     console.log(`job: ${job}`);
 }
-displayPerson(person2); //let's pass "person1" object to the function
+displayPerson(person1); //let's pass "person1" object to the function

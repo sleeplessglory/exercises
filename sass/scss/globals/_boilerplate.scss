@@ -1,0 +1,15 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--background-color);
+    color: var(--color);
+    margin: 0;
+    padding: 0;
+}
+/*SASS PARTIALS*/
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*, *::before, *::after {
+    box-sizing: inherit; /*Inherits the same value for this property from the <html>*/
+}

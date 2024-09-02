@@ -1,0 +1,5 @@
+/*VARIABLES*/
+:root { /*overwrites the values of the same variable names*/
+    --background-color:  hsl(222, 96%, 80%); /*Names of CSS custom properties start with "--"*/
+    --color: hsl(0, 0%, 100%);
+}

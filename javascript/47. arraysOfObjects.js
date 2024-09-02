@@ -1,8 +1,8 @@
 const fruits = [{name: "apple", colour: "green", calories: 90},
-    {name: "orange", colour: "orange", calories: 45},
-    {name: "banana", colour: "red", calories: 105},
-    {name: "coconut", colour: "white", calories: 159},
-    {name: "pineapple", colour: "yellow", calories: 37}];
+                {name: "orange", colour: "orange", calories: 45},
+                {name: "banana", colour: "red", calories: 105},
+                {name: "coconut", colour: "white", calories: 159},
+                {name: "pineapple", colour: "yellow", calories: 37}];
 
 console.log(fruits[0].name); //first access the element and then the property as you always do
 
