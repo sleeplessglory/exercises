@@ -1,9 +1,15 @@
+@use '../util'; /*Path from this folder to the folder with fonts
+@use '../util' as *; with this you're able not to specify the folder name of the variable
+*/
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: util.$font; /*The name of the folder used with the variable (so, you can use the same variable name in other folders)*/
     background-color: var(--background-color);
     color: var(--color);
     margin: 0;
     padding: 0;
+
+    /*display: grid; or "flex" 
+    justify-content: center; if we don't use margin-inline (reference to _grid.scss)*/
 }
 /*SASS PARTIALS*/
 html {

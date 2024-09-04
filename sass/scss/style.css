@@ -1,12 +1,18 @@
 /*SASS PARTIALS*/
 /*SASS PARTIALS*/
 /*This file contains all the partials for this folder that will be exported to "style.scss"*/
+/*SASS variables are marked as "$"*/
+/*Path from this folder to the folder with fonts
+@use '../util' as *; with this you're able not to specify the folder name of the variable
+*/
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Open Sans", sans-serif; /*The name of the folder used with the variable (so, you can use the same variable name in other folders)*/
   background-color: var(--background-color);
   color: var(--color);
   margin: 0;
   padding: 0;
+  /*display: grid; or "flex" 
+  justify-content: center; if we don't use margin-inline (reference to _grid.scss)*/
 }
 
 /*SASS PARTIALS*/
@@ -44,4 +50,29 @@ a, a:visited, a:active {
   --color: hsl(0, 0%, 100%);
 }
 
-/*Specify the folder name with those partials to import them here*//*# sourceMappingURL=style.css.map */
+/*Specify the folder name with those partials to import them here*/
+.grid { /*grid in this case is the block (of BEM) (reference to the <div> class name)*/
+  display: grid;
+  grid-template-columns: 1fr; /*1 fractional unit (column)*/
+  gap: 40px; /*40px between all cells in the grid*/
+  grid-template-rows: auto auto; /*will be sized based on how much content the grid child item contains*/
+  width: min(100% - 40px, 1000px);
+  margin-inline: auto;
+  padding: 0 20px;
+}
+.grid__main, .grid__sidebar {
+  padding: 40px;
+}
+.grid__main { /*"&" refers to the parent (grid) and (main) is nested now */
+  background-color: hsl(240, 87%, 35%);
+}
+.grid__sidebar { /*element (of BEM) as well as "__main" for the parent <div>*/
+  background-color: hsl(300, 92%, 26%);
+}
+@media (min-width: 900px) {
+  .grid { /*In pure CSS "@media" is used outside of this scope and inside again*/
+    /*The @media query overwrites the properties mentioned earlier*/
+    grid-template-columns: 2fr 1fr; /*The 1st column is 2 times wider than the 2nd*/
+    grid-template-rows: auto; /*Only 1 row now*/
+  }
+}/*# sourceMappingURL=style.css.map */

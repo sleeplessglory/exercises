@@ -2,11 +2,27 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!--content="width=device-width" means that the size of the site will be the same as of the device loading it-->
+        <!--initial-scale=1.0 means that the initial zoom will be 100%-->
+        <!--Select the line(s) you wanna comment. Use "Ctrl K + Ctrl C" to comment and "Ctrl K + Ctrl U" to uncomment-->
         <title>SASS course</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./scss/style.css">
     </head>
     <body>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur iure porro repellat fugiat, dicta repudiandae enim quaerat praesentium, illum at eveniet aut. Dignissimos error et illum necessitatibus sed ipsam provident.</p>
+        <div class="grid">
+            <main class="grid__main"> <!--"__" is a part of BEM approach-->
+                <h1>SASS course</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur iure porro repellat fugiat, dicta repudiandae enim quaerat praesentium, illum at eveniet aut. Dignissimos error et illum necessitatibus sed ipsam provident.</p>
+            </main>
+            <aside class="grid__sidebar">
+                <h2>More info</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit neque hic beatae minus recusandae quis ex! Nisi culpa aliquid laudantium nesciunt. Ab, id dolorum ea voluptas architecto cum. Placeat.</p>
+            </aside>
+        </div>
     </body>
 </html>
