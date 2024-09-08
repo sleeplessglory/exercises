@@ -1,0 +1,36 @@
+In order to have your code documented, install JSDoc:
+1. npm install -g jsdoc (globally)
+2. npm install docdash --save-dev (a theme for a doc, look for other options too)
+3. create "jsdoc.json" file in the root folder of a project.
+4. set in that file:
+{
+    "plugins": ["plugins/markdown"],
+    "source": {
+        "include": ["src"],
+        "exclude": ["node_modules", "cypress"],
+        "includePattern": ".+\\.js(doc|x)?$"
+    },
+    "opts": {
+        "template": "node_modules/docdash",
+        "destination": "./documentation"
+    },
+    "docdash": {
+	"sort": true,
+	"search": true,
+	"collapse": false
+    }
+}
+5. npx jsdoc -c jsdoc.json
+6. the main documentation file is in index.html
+
+notes: 
+a) "plugins": ["plugins/markdown"] is used to mark the comments:
+<b>This function ...<b> makes this line bold in the documentation
+
+b) "source" "include" is where the source code situated
+"exclude" doesn't include those folders for documentation
+"includePattern" is what extensions are included (.js or jsx)
+for TypeScript use ".+\\.ts(doc|x)?$"
+
+c) "opts" "template" uses the docdash preinstalled theme to make it look better
+"destination" is a folder name specified where the doc will be saved in the root of a project
