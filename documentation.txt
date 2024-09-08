@@ -1,4 +1,4 @@
-In order to have your code documented, install JSDoc:
+In order to have your code documented install JSDoc:
 1. npm install -g jsdoc (globally)
 2. npm install docdash --save-dev (a theme for a doc, look for other options too)
 3. create "jsdoc.json" file in the root folder of a project.
