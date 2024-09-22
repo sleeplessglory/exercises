@@ -1,4 +1,5 @@
 @use '../util';
+//@use '../util' as u; in this case "u" can be used instead of "util"
 /*SASS PARTIALS*/
 h1, h2, h3 {
     font-weight: 700;
@@ -26,7 +27,7 @@ h1 {
     //font-size: 7.5vw; //works for any width now accordingly! (no limits as the width grows)
     //font-size: calc(16px + 2vw); //font-size is at least 16px always (no limits as the width grows)
     //font-size: clamp(28px, 16px + 2vw, 40px); //clamp(the min width, the preferred, the max width allowed);
-    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem); //assuming that the default font size is 16px
+    //font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem); //assuming that the default font size is 16px
     //now the font size will be changed too, if the default size is changed within the browser too
     /*
     @include util.breakpoint(medium) {
@@ -35,10 +36,12 @@ h1 {
     @include util.breakpoint(large) {
         font-size: 42px;
     }*/
+    font-size: clamp(util.rem(28), util.rem(16) + 2vw, util.rem(40));
 }
 h2 {
-    //font-size: clamp(22px, 14px + 1.5vw, 36px); //clamp(the min width, the preferred, the max width allowed);
-    font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+    //font-size: clamp(22px, 14px + 1.5vw, 36); //clamp(the min width, the preferred, the max width allowed);
+    //font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+    font-size: clamp(util.rem(22), util.rem(14) + 1.5vw, util.rem(36));
 }
 /*For pixels: your elements won't be affected (if you change the default font size in a browser,
 because pixels are absolute values. That's why you must avoid using them!*/

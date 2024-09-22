@@ -2,17 +2,21 @@
 .grid { /*grid in this case is the block (of BEM) (reference to the <div> class name)*/
     display: grid;
     grid-template-columns: 1fr; /*1 fractional unit (column)*/
-    gap: 40px; /*40px between all cells in the grid*/
+    //gap: 40px; /*40px between all cells in the grid*/
+    gap: util.rem(40);
     grid-template-rows: auto auto; /*will be sized based on how much content the grid child item contains*/
     //max-width: 1000px;
-    width: min(100% - 40px, 1000px); 
+    //width: min(100% - 40px, 1000px); 
+    width: min(100% - util.rem(40), util.rem(1000)); 
     //sets the min out of 2 values. If the width is 800px, (100% = 800px) will be used. If the width is 1400px (1000px is used)/ "-40" is for the left and right sides
     //margin: 0 auto;
     margin-inline: auto; //will set "auto" to the left and right
     //"margin-inline" is a short way of "margin-inline-start" and "margin-inline-end"*/
-    padding: 0 20px;
+    //padding: 0 20px;
+    padding: 0 util.rem(20);
     &__main, &__sidebar {
-        padding: 40px;
+        //padding: 40px;
+        padding: util.rem(40);
     }
     &__main { /*"&" refers to the parent (grid) and (main) is nested now */
         background-color: hsl(240, 87%, 35%); //default for mobile devices

@@ -1,0 +1,22 @@
+//SASS functions
+//Head to sass-lang.com for documentation
+@use 'sass:math'; //"math" will be used as a namespace when we use the function
+//font-size: rem(30);
+@function rem($pixel) {
+    //throw an error if the parameter has a unit
+    //otherwise divide $pixel by 16 to return "rem"s
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16)+rem;    
+    }
+    @else {
+        @error 'Don\'t use units when using the rem() function'
+    }
+}
+@function em($pixel) { //same for "em"s
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16)+em;    
+    }
+    @else {
+        @error 'Don\'t use units when using the em() function'
+    }
+}

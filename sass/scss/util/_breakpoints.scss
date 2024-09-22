@@ -1,3 +1,4 @@
+@use 'functions' as f;
 /*SASS MIXINS AND BUILT-IN MODULES
 700px breakpoint for mobile devices (43.75em) 
 900px for tablets (56.25em)
@@ -7,9 +8,9 @@ similar to an object.
 */
 //Let's add a SASS map "breakpoints-up();"
 $breakpoints-up: ( //any name can be given
-    "medium": 43.75em, //medium and above
-    "large": 56.25em, //large and above
-    "xlarge": 90em //xlarge and above
+    "medium": f.em(700), //medium and above
+    "large": f.em(900), //large and above
+    "xlarge": f.em(1440) //xlarge and above
 );
 //Let's create the mixin to write media queries
 //Every time the mixin is used, it generates the following inside
@@ -21,9 +22,9 @@ $breakpoints-up: ( //any name can be given
 //Let's cover the overlapping issue now
 //699.98px, 899.98px, 1439.98px
 $breakpoints-down: (
-    "small": 43.74875em, //small and down
-    "medium": 56.24875em, //medium and down
-    "large": 89.99875em //large and down
+    "small": f.em(699.98), //small and down
+    "medium": f.em(899.98), //medium and down
+    "large": f.em(1439.98) //large and down
 );
 @mixin breakpoint-down($size) {
     @media(max-width: map-get($breakpoints-down, $size)) {

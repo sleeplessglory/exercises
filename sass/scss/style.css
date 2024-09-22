@@ -50,7 +50,6 @@ a, a:visited, a:active {
 }
 
 h1 {
-  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
   /*
   @include util.breakpoint(medium) {
       font-size: 36px;
@@ -58,6 +57,7 @@ h1 {
   @include util.breakpoint(large) {
       font-size: 42px;
   }*/
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
 }
 
 h2 {
@@ -79,11 +79,11 @@ because pixels are absolute values. That's why you must avoid using them!*/
 .grid { /*grid in this case is the block (of BEM) (reference to the <div> class name)*/
   display: grid;
   grid-template-columns: 1fr; /*1 fractional unit (column)*/
-  gap: 40px; /*40px between all cells in the grid*/
+  gap: 2.5rem;
   grid-template-rows: auto auto; /*will be sized based on how much content the grid child item contains*/
-  width: min(100% - 40px, 1000px);
+  width: min(100% - 2.5rem, 62.5rem);
   margin-inline: auto;
-  padding: 0 20px;
+  padding: 0 1.25rem;
   /*@media (min-width: 900px) {/*In pure CSS "@media" is used outside of this scope and inside again
       //The @media query overwrites the properties mentioned earlier
       grid-template-columns: 2fr 1fr; //The 1st column is 2 times wider than the 2nd
@@ -91,7 +91,7 @@ because pixels are absolute values. That's why you must avoid using them!*/
   }*/
 }
 .grid__main, .grid__sidebar {
-  padding: 40px;
+  padding: 2.5rem;
 }
 .grid__main { /*"&" refers to the parent (grid) and (main) is nested now */
   background-color: hsl(240, 87%, 35%);
