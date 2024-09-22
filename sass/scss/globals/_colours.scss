@@ -3,3 +3,9 @@
     --background-color:  hsl(222, 96%, 80%); /*Names of CSS custom properties start with "--"*/
     --color: hsl(0, 0%, 100%);
 }
+.green { //used from "_grid.scss" file (without "&")
+    background-color: hsl(120, 94%, 20%);
+}
+.magenta { //used from "_grid.scss" file (without "&")
+    background-color: hsl(300, 92%, 26%);
+}

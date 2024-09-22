@@ -78,10 +78,9 @@ because pixels are absolute values. That's why you must avoid using them!*/
 }
 
 /*Specify the folder name with those partials to import them here*/
-.grid__widget--magenta, .grid__widget--green {
-  padding: 1rem;
-}
-
+/*%widget { //placeholder
+    padding: util.rem(16); //gets rid of margin collapses
+}*/
 .grid { /*grid in this case is the block (of BEM) (reference to the <div> class name)*/
   display: grid;
   grid-template-columns: 1fr; /*1 fractional unit (column)*/
@@ -141,9 +140,14 @@ because pixels are absolute values. That's why you must avoid using them!*/
     grid-template-rows: auto;
   }
 }
-.grid__widget--green {
+.grid__widget {
+  padding: 1rem;
+  /*For helper/utility classes: you can add them in HTML anywhere you want.
+  Thefore, those properties will be applied to them too (reusable)*/
+}
+.grid__widget.green {
   background-color: hsl(120, 94%, 20%);
 }
-.grid__widget--magenta {
+.grid__widget.magenta {
   background-color: hsl(300, 92%, 26%);
 }/*# sourceMappingURL=style.css.map */
