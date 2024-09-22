@@ -12,7 +12,7 @@ In order to have your code documented install JSDoc:
     },
     "opts": {
         "template": "node_modules/docdash",
-        "destination": "./documentation"
+        "destination": "./documentation/developer"
     },
     "docdash": {
 	"sort": true,
@@ -34,3 +34,5 @@ for TypeScript use ".+\\.ts(doc|x)?$"
 
 c) "opts" "template" uses the docdash preinstalled theme to make it look better
 "destination" is a folder name specified where the doc will be saved in the root of a project
+"./documentation/developer" creates a folder and a subforlder for developer
+user's documentation can also be created and pasted in a "./documentation/user" directory if you create one

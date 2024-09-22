@@ -1,3 +1,4 @@
+@use '../util'; //we need to load the breakpoint mixin from "util" folder
 .grid { /*grid in this case is the block (of BEM) (reference to the <div> class name)*/
     display: grid;
     grid-template-columns: 1fr; /*1 fractional unit (column)*/
@@ -14,14 +15,44 @@
         padding: 40px;
     }
     &__main { /*"&" refers to the parent (grid) and (main) is nested now */
-        background-color: hsl(240, 87%, 35%)
+        background-color: hsl(240, 87%, 35%); //default for mobile devices
+        //Order of @media queries matter due to the cascade!
+        //The cascading part of CSS means that in the rules of the same level
+        //of specificity the latest rule will overwrite the rules before it
+        @include util.breakpoint(large) { //is overwritten by medium below
+            background-color: hsl(40, 74%, 43%);
+        }
+        @include util.breakpoint(medium) {
+            background-color: hsl(120, 89%, 17%);
+        }
+        @include util.breakpoint(large) {
+            background-color: hsl(0, 81%, 26%);
+        }
     }
     &__sidebar { /*element (of BEM) as well as "__main" for the parent <div>*/
         background-color: hsl(300, 92%, 26%);
+        /*@include util.breakpoint(large) {
+            text-align: left; //on the left when translates into the large size and above
+        }*/
+        /*@media (max-width: 56.25em) {
+            text-align: center; //centered for mobile devices and tablets by default
+        }*/
+        @include util.breakpoint-down(medium) { //for medium and down
+            text-align: center;
+        }
+        @include util.breakpoint-down(small) { //for small and down
+            text-align: right;
+        }
     } 
-    @media (min-width: 900px) {/*In pure CSS "@media" is used outside of this scope and inside again*/
-        /*The @media query overwrites the properties mentioned earlier*/
-        grid-template-columns: 2fr 1fr; /*The 1st column is 2 times wider than the 2nd*/
-        grid-template-rows: auto; /*Only 1 row now*/
+    
+    /*@media (min-width: 900px) {/*In pure CSS "@media" is used outside of this scope and inside again
+        //The @media query overwrites the properties mentioned earlier
+        grid-template-columns: 2fr 1fr; //The 1st column is 2 times wider than the 2nd
+        grid-template-rows: auto; //Only 1 row now
+    }*/
+    @include util.breakpoint(large) { //loading the "breakpoint" mixin
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
     }
+    //In pure CSS @media can't be nested within a selector, but in SASS we can
 }

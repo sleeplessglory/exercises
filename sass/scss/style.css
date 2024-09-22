@@ -2,6 +2,13 @@
 /*SASS PARTIALS*/
 /*This file contains all the partials for this folder that will be exported to "style.scss"*/
 /*SASS variables are marked as "$"*/
+/*SASS MIXINS AND BUILT-IN MODULES
+700px breakpoint for mobile devices (43.75em) 
+900px for tablets (56.25em)
+1440px for desktop devices (90em)
+SASS map built-in module can save data in "key: value" pairs
+similar to an object.
+*/
 /*Path from this folder to the folder with fonts
 @use '../util' as *; with this you're able not to specify the folder name of the variable
 */
@@ -59,6 +66,11 @@ a, a:visited, a:active {
   width: min(100% - 40px, 1000px);
   margin-inline: auto;
   padding: 0 20px;
+  /*@media (min-width: 900px) {/*In pure CSS "@media" is used outside of this scope and inside again
+      //The @media query overwrites the properties mentioned earlier
+      grid-template-columns: 2fr 1fr; //The 1st column is 2 times wider than the 2nd
+      grid-template-rows: auto; //Only 1 row now
+  }*/
 }
 .grid__main, .grid__sidebar {
   padding: 40px;
@@ -66,13 +78,43 @@ a, a:visited, a:active {
 .grid__main { /*"&" refers to the parent (grid) and (main) is nested now */
   background-color: hsl(240, 87%, 35%);
 }
+@media (min-width: 56.25em) {
+  .grid__main {
+    background-color: hsl(40, 74%, 43%);
+  }
+}
+@media (min-width: 43.75em) {
+  .grid__main {
+    background-color: hsl(120, 89%, 17%);
+  }
+}
+@media (min-width: 56.25em) {
+  .grid__main {
+    background-color: hsl(0, 81%, 26%);
+  }
+}
 .grid__sidebar { /*element (of BEM) as well as "__main" for the parent <div>*/
   background-color: hsl(300, 92%, 26%);
+  /*@include util.breakpoint(large) {
+      text-align: left; //on the left when translates into the large size and above
+  }*/
+  /*@media (max-width: 56.25em) {
+      text-align: center; //centered for mobile devices and tablets by default
+  }*/
 }
-@media (min-width: 900px) {
-  .grid { /*In pure CSS "@media" is used outside of this scope and inside again*/
-    /*The @media query overwrites the properties mentioned earlier*/
-    grid-template-columns: 2fr 1fr; /*The 1st column is 2 times wider than the 2nd*/
-    grid-template-rows: auto; /*Only 1 row now*/
+@media (max-width: 56.24875em) {
+  .grid__sidebar {
+    text-align: center;
+  }
+}
+@media (max-width: 43.74875em) {
+  .grid__sidebar {
+    text-align: right;
+  }
+}
+@media (min-width: 56.25em) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
   }
 }/*# sourceMappingURL=style.css.map */
