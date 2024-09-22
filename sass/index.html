@@ -20,8 +20,20 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur iure porro repellat fugiat, dicta repudiandae enim quaerat praesentium, illum at eveniet aut. Dignissimos error et illum necessitatibus sed ipsam provident.</p>
             </main>
             <aside class="grid__sidebar">
-                <h2>More info</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit neque hic beatae minus recusandae quis ex! Nisi culpa aliquid laudantium nesciunt. Ab, id dolorum ea voluptas architecto cum. Placeat.</p>
+                <!--Let's check out the cases when the text might have different length-->
+                <div class="grid__widget--green"> <!--"--green" is a modifier (of BEM)-->
+                    <h2>More info</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit neque hic beatae minus recusandae quis ex! Nisi culpa aliquid laudantium nesciunt. Ab, id dolorum ea voluptas architecto cum. Placeat.</p> 
+                    <!--Use "Alt+Z" to wrap words-->
+                </div>
+                <div class="grid__widget--magenta">
+                    <h2>Check out this cool thing!</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit neque hic beatae minus recusandae quis ex! Nisi culpa aliquid laudantium nesciunt.</p>
+                </div>
+                <div class="grid__widget--magenta">
+                    <h2>More cool stuff is right here too!</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit neque hic beatae minus recusandae quis ex!</p>
+                </div>
             </aside>
         </div>
     </body>

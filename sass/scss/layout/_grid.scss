@@ -1,4 +1,7 @@
 @use '../util'; //we need to load the breakpoint mixin from "util" folder
+%widget { //placeholder
+    padding: util.rem(16); //gets rid of margin collapses
+}
 .grid { /*grid in this case is the block (of BEM) (reference to the <div> class name)*/
     display: grid;
     grid-template-columns: 1fr; /*1 fractional unit (column)*/
@@ -34,7 +37,6 @@
         }
     }
     &__sidebar { /*element (of BEM) as well as "__main" for the parent <div>*/
-        background-color: hsl(300, 92%, 26%);
         /*@include util.breakpoint(large) {
             text-align: left; //on the left when translates into the large size and above
         }*/
@@ -62,4 +64,20 @@
 
     //font-size: 2rem; //check out child elements with "em" values now (based on a patent)
     //font-size: 2em; //depends on a parent <body> font size
+    &__widget {
+        //$widget: &; //a "widget" variable that's set to the "&" (parent element), which is "&__widget"
+        &--green { //modifier (of BEM)
+            //@extend .grid__widget; //uses all the styles of "grid__widget" class (equal line below)
+            //way to load the value of SASS variables in SASS selector name (called an interpolation):
+            //@extend #{$widget}; //interpolation
+            //but it's easier to use the 1st option:
+            //@extend .grid__widget; //use @extend for closer related elements
+            @extend %widget; //using the placeholder from the top (optional)
+            background-color: hsl(120, 94%, 20%);
+        }
+        &--magenta {
+            @extend %widget;
+            background-color: hsl(300, 92%, 26%);
+        }
+    }
 }

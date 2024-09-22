@@ -9,6 +9,8 @@
 SASS map built-in module can save data in "key: value" pairs
 similar to an object.
 */
+/*Better not to use pixels for @media queries since it won't scale up/down when
+the default font size is changed within a browser by users!*/
 /*Path from this folder to the folder with fonts
 @use '../util' as *; with this you're able not to specify the folder name of the variable
 */
@@ -76,6 +78,10 @@ because pixels are absolute values. That's why you must avoid using them!*/
 }
 
 /*Specify the folder name with those partials to import them here*/
+.grid__widget--magenta, .grid__widget--green {
+  padding: 1rem;
+}
+
 .grid { /*grid in this case is the block (of BEM) (reference to the <div> class name)*/
   display: grid;
   grid-template-columns: 1fr; /*1 fractional unit (column)*/
@@ -112,7 +118,6 @@ because pixels are absolute values. That's why you must avoid using them!*/
   }
 }
 .grid__sidebar { /*element (of BEM) as well as "__main" for the parent <div>*/
-  background-color: hsl(300, 92%, 26%);
   /*@include util.breakpoint(large) {
       text-align: left; //on the left when translates into the large size and above
   }*/
@@ -135,4 +140,10 @@ because pixels are absolute values. That's why you must avoid using them!*/
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
   }
+}
+.grid__widget--green {
+  background-color: hsl(120, 94%, 20%);
+}
+.grid__widget--magenta {
+  background-color: hsl(300, 92%, 26%);
 }/*# sourceMappingURL=style.css.map */

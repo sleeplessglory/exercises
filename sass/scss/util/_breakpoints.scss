@@ -31,3 +31,5 @@ $breakpoints-down: (
         @content;
     }
 }
+/*Better not to use pixels for @media queries since it won't scale up/down when
+the default font size is changed within a browser by users!*/
