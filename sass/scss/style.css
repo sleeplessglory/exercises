@@ -42,12 +42,30 @@ h1, h2, h3 {
 
 p {
   margin-top: 0;
+  font-size: 1rem;
 }
 
 a, a:visited, a:active {
   text-decoration: none;
 }
 
+h1 {
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+  /*
+  @include util.breakpoint(medium) {
+      font-size: 36px;
+  }
+  @include util.breakpoint(large) {
+      font-size: 42px;
+  }*/
+}
+
+h2 {
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+}
+
+/*For pixels: your elements won't be affected (if you change the default font size in a browser,
+because pixels are absolute values. That's why you must avoid using them!*/
 /*You can specify the name this way, if you called it with "_"*/
 /*Specify @forward in the file where we import these files above. Check out "style.scss"*/
 /*VARIABLES*/

@@ -55,4 +55,7 @@
         grid-template-rows: auto;
     }
     //In pure CSS @media can't be nested within a selector, but in SASS we can
+
+    //font-size: 2rem; //check out child elements with "em" values now (based on a patent)
+    //font-size: 2em; //depends on a parent <body> font size
 }

@@ -10,6 +10,8 @@ body {
 
     /*display: grid; or "flex" 
     justify-content: center; if we don't use margin-inline (reference to _grid.scss)*/
+
+    //font-size: 1.5em; //depends on a parent (in this case the default font size of a browser)
 }
 /*SASS PARTIALS*/
 html {

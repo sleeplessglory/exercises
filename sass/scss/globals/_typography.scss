@@ -1,3 +1,4 @@
+@use '../util';
 /*SASS PARTIALS*/
 h1, h2, h3 {
     font-weight: 700;
@@ -6,7 +7,40 @@ h1, h2, h3 {
 }
 p {
     margin-top: 0;
+    //font-size: 16px;
+    //font-size: 1rem;
+    //let's add a font size for a parent ".grid" selector (2rem)
+    //font-size: 1em; //based on a parent
+    //the parent ".grid" of 2em depends on a parent <body> with 1.5em (miltiply effect)
+    //16(default)*1.5(<body>)*2(.grid)*1(<p>)=48px
+    font-size: 1rem; //"rem" is recommended, but "em" can be used too (keep in mind the above)
 }
 a, a:visited, a:active {
     text-decoration: none;
 }
+//RESPONSIVE TYPOGRAPHY
+//1 vieport width unit (vw) and viewport height unit (vh) = 1% of device's viewport
+h1 {
+    //font-size: 28px; 
+    //For a mobile device with 375px width we want the font size 28px/375px=0.0746... = 7.5vw
+    //font-size: 7.5vw; //works for any width now accordingly! (no limits as the width grows)
+    //font-size: calc(16px + 2vw); //font-size is at least 16px always (no limits as the width grows)
+    //font-size: clamp(28px, 16px + 2vw, 40px); //clamp(the min width, the preferred, the max width allowed);
+    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem); //assuming that the default font size is 16px
+    //now the font size will be changed too, if the default size is changed within the browser too
+    /*
+    @include util.breakpoint(medium) {
+        font-size: 36px;
+    }
+    @include util.breakpoint(large) {
+        font-size: 42px;
+    }*/
+}
+h2 {
+    //font-size: clamp(22px, 14px + 1.5vw, 36px); //clamp(the min width, the preferred, the max width allowed);
+    font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+}
+/*For pixels: your elements won't be affected (if you change the default font size in a browser,
+because pixels are absolute values. That's why you must avoid using them!*/
+//1rem = default font size of a browser (based on it)
+//1em is based on the font size of a parent element
