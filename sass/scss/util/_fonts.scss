@@ -1,1 +1,4 @@
-$font: "Open Sans", sans-serif; /*SASS variables are marked as "$"*/
+$font: "Open Sans", sans-serif; 
+/*SASS variables are marked as "$". The compiler converts any SASS variables into the final
+CSS values. Whereas CSS custom properties are newer and native to CSS. JavaScript can be used
+to change values of CSS custom properties after the web site is loaded (e.g. dark mode toggling)*/
