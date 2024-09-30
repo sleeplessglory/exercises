@@ -1,0 +1,28 @@
+Basic app:
+npm init -y for a default set-up
+npm install webpack webpack-cli --save-dev
+update in package.json file:
+  "scripts": {
+    "build": "webpack"
+  },
+create "webpack.config.js" file in the root of a project
+__________________________________
+React type of app with Webpack bundler (not Vite):
+npm init -y for a default set-up
+npm install react react-dom
+npm install webpack webpack-cli webpack-dev-server --save-dev
+npm install @babel/core @babel/preset-react @babel/preset-env babel-loader --save-dev
+npm install html-webpack-plugin --save-dev
+create "src/main.jsx" with the lines:
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App.jsx';
+
+createRoot(document.getElementById('root')).render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+)
+
+
+create "webpack.config.js" file in the root of a project
