@@ -13,10 +13,12 @@ npm install react react-dom
 npm install webpack webpack-cli webpack-dev-server --save-dev
 npm install @babel/core @babel/preset-react @babel/preset-env babel-loader --save-dev
 npm install html-webpack-plugin --save-dev
-create "src/main.jsx" with the lines:
+npm install sass-loader sass css-loader mini-css-extract-plugin --save-dev
+create "src/index.jsx" with the lines:
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
+import App from './components/App.jsx';
+import './sass/style.scss';
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -24,5 +26,86 @@ createRoot(document.getElementById('root')).render(
     </StrictMode>,
 )
 
+create file "src/index.html" with <div id="root"></div> in the <body>
+create "webpack.config.js" file in the root of a project with following:
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-create "webpack.config.js" file in the root of a project
+export default {
+    entry: './src/index.jsx',
+    output: {
+        path: path.resolve('dist'),
+        filename: 'bundle.js',
+        clean: true //Clean the directory before each build
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'], //Automatically resolve extensions
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/, //Match JS and JSX files
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader', //For JavaScript and JSX files
+                },
+            },
+            {
+                test: /\.scss$/, //Match SCSS files
+                use: [
+                    MiniCssExtractPlugin.loader, //Extract CSS into files
+                    'css-loader',    //Turn CSS into CommonJS
+                    'sass-loader',   //Compile SASS to CSS
+                ],
+            },
+            /*{
+                test: /\.css$/, //Match plain CSS files
+                use: ['style-loader', 'css-loader'], //Process CSS files
+            },*/
+            {
+                test: /\.(png|jpg|jpeg|gif|svg|mp4|webm|ogg|mov|mp3|wav|flac|aac)$/, //Handle image, video and audio files
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/[name].[hash][ext]', //Output path for all assets (images, videos, audios)
+                },               
+            }
+        ],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            favicon: './public/favicon.png'
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'style.css',
+        }),
+    ],
+    devServer: {
+        static: './dist', //Serve files from "dist"
+        port: 3000, //Development server port
+        open: true
+    },
+    mode: 'development',
+};
+
+create "public" folder in the root with index.html and its favicon
+create ".babelrc" in the root with lines:
+{
+    "presets": [
+        ["@babel/preset-env"],
+        ["@babel/preset-react", { "runtime": "automatic" }] //ensures that "React" is used automatically without importing it to index.jsx
+    ]
+}
+
+In package.json make sure to have:
+"scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production"
+}
+Use "npm run dev" to run the server and "npm run build" for production purposes
+To use "assets" content you should import it within React components:
+import icon from '../../src/assets/images/icon-square-big.png';
+...
+                <img src={icon} height="400" alt="Webpack icon" title="Webpack icon"></img>
+...
